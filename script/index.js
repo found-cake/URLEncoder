@@ -11,7 +11,7 @@ repetitionsRange.addEventListener('input', () => repetitionsValue.textContent = 
  * encode button
  * @returns {void}
  */
-const encodeText = () => {
+const  encodeText = () => {
     const repetitions = parseInt(repetitionsRange.value);
     let encodedText = input.value;
     for (let i = 0; i < repetitions; i++) {
@@ -27,7 +27,7 @@ const encodeText = () => {
 const copyText = () => {
     const text = outputText.innerText;
 
-    if (text === null || text === undefined || text === '') {
+    if (text === null || text === undefined || text === ''){
         showToast("Empty text cannot be copied.");
         return;
     }
@@ -38,6 +38,24 @@ const copyText = () => {
             showToast("Failed to copy text");
             console.error("Failed to copy text: ", err);
         });
+}
+
+/**
+ * @param {string} str 
+ * @param {boolean} encodeEnglish 
+ * @returns {string}
+ */
+const customEncodeURIComponent = (str, encodeEnglish) => {
+    let encodedStr = '';
+    for (let i = 0; i < str.length; i++) {
+        let charCode = str.charCodeAt(i);
+        let encodedChar = '%' + charCode.toString(16).toUpperCase();
+        if (!encodeEnglish && charCode < 128) {
+            encodedChar = str[i];
+        }
+        encodedStr += encodedChar;
+    }
+    return encodedStr;
 }
 
 /**
