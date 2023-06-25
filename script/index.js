@@ -11,7 +11,7 @@ repetitionsRange.addEventListener('input', () => repetitionsValue.textContent = 
  * encode button
  * @returns {void}
  */
-const  encodeText = () => {
+const encodeText = () => {
     const repetitions = parseInt(repetitionsRange.value);
     let encodedText = input.value;
     for (let i = 0; i < repetitions; i++) {
