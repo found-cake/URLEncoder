@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>URL Encoder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -29,11 +31,15 @@
         <button class="btn btn-primary" onclick="encodeText()">Encode</button>
 
         <div class="output-text mt-3">
+            <button class="btn btn-secondary copy-button" onclick="copyText()">Copy</button>
             <strong><label for="outputText">Encoded Text:</label></strong>
             <div id="outputText"></div>
         </div>
     </div>
+
+    <div id="toastContainer" class="toast-container"></div>
     
     <script src="script/index.js"></script>
 </body>
+
 </html>
